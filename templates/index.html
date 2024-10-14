@@ -155,11 +155,14 @@
     <div class="menu-items">
         {% for product in products %}
             <div class="menu-item">
-                <img src="{{ product.image.url }}" alt="Product Image">
+                <a href="{% url 'product_detail' product.id %}">
+                    <img src="{{ product.image.url }}" alt="Product Image">
+                </a>
             </div>
         {% endfor %}
     </div>
 </section>
+
 
 
 <!-- Testimonials Section -->
