@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +15,13 @@
         h1 {
             color: #333;
             text-align: center;
+        }
+        .menu-section {
+            background-image: url("{% static '../media/photo_2024-10-13_22-01-50.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        
         }
         .product-container {
             max-width: 600px;
@@ -46,7 +54,7 @@
     </style>
 </head>
 <body>
-    <div class="product-container">
+    <div class="product-container menu-section">
         <h1>{{ product.name }}</h1>
         <img src="{{ product.image.url }}" alt="Product Image" class="product-image">
         <a href="{% url 'menu' %}" class="back-link">Back to Menu</a>
