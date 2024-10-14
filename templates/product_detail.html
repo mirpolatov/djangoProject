@@ -8,8 +8,6 @@
 <body>
     <h1>{{ product.name }}</h1>
     <img src="{{ product.image.url }}" alt="Product Image">
-    <p>Owner: {{ product.owner }}</p>
-    <p>Price: ${{ product.price }}</p>
-    <a href="{% url 'your_menu_view_name' %}">Back to Menu</a>
+    <a href="{% url 'menu' %}">Back to Menu</a>  <!-- Use the actual name here -->
 </body>
 </html>
