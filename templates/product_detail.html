@@ -9,7 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f9f9f9;
         }
         h1 {
@@ -17,16 +17,19 @@
             text-align: center;
         }
         .menu-section {
-            background-image: url("{% static '../media/photo_2024-10-13_22-01-50.jpg' %}");
+            background-image: url("{% static 'media/photo_2024-10-13_22-01-50.jpg' %}");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-        
+            height: 100vh;  /* Adjust height as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .product-container {
             max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -54,10 +57,12 @@
     </style>
 </head>
 <body>
-    <div class="product-container menu-section">
-        <h1>{{ product.name }}</h1>
-        <img src="{{ product.image.url }}" alt="Product Image" class="product-image">
-        <a href="{% url 'menu' %}" class="back-link">Back to Menu</a>
+    <div class="menu-section">
+        <div class="product-container">
+            <h1>{{ product.name }}</h1>
+            <img src="{{ product.image.url }}" alt="Product Image" class="product-image">
+            <a href="{% url 'menu' %}" class="back-link">Back to Menu</a>
+        </div>
     </div>
 </body>
 </html>
